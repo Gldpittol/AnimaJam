@@ -26,7 +26,8 @@ public class TrashPuzzle : MonoBehaviour
         float rndPosX = Random.Range(minPosX, maxPosX);
         float rndRotation = Random.Range(0, 360);
 
-        Instantiate(trashPrefabs[rndTrash], new Vector2(rndPosX, posY), Quaternion.Euler(0,0,rndRotation));
+        GameObject temp = Instantiate(trashPrefabs[rndTrash], new Vector2(rndPosX, posY), Quaternion.Euler(0,0,rndRotation));
+        Destroy(temp, 20);
     }
 
     public void EndTrashSpawn()
