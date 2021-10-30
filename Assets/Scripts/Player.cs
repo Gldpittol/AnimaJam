@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool canDoubleJump = true;
-    [SerializeField]private bool isGrounded = true;
-
+    private bool isGrounded = true;
+    
     public bool IsGrounded => isGrounded;
     private void Awake()
     {
@@ -54,12 +54,14 @@ public class Player : MonoBehaviour
         if (isGrounded) isGrounded = false;
         else canDoubleJump = false;
 
+        rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
     }
 
     public void ResetGrounding()
     {
         isGrounded = true;
+        canDoubleJump = true;
     }
 
     public void DisableGrounding()
