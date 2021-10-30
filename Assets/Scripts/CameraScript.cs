@@ -6,9 +6,9 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public Vector3 offset;
-
+    public static bool FollowPlayer = true;
     public void Update()
     {
-        transform.position = Player.Instance.transform.position + offset;
+        if(FollowPlayer) transform.position = Player.Instance.transform.position + offset;
     }
 }
