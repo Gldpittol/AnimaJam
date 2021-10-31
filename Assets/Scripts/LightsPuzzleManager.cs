@@ -15,6 +15,8 @@ public class LightsPuzzleManager : MonoBehaviour
 
     public bool isPuzzleCompleted = false;
     
+    [SerializeField] private int type2DesiredID;
+
     private void Awake()
     {
         Instance = this;
@@ -27,6 +29,25 @@ public class LightsPuzzleManager : MonoBehaviour
         foreach (Light light in lightsList)
         {
             if (!light.IsOn) isCompleted = false;
+        }
+
+        if (isCompleted)
+        {
+            isPuzzleCompleted = true;
+            minimapIcon.SetActive(false);
+            TrashPuzzle.Instance.EndTrashSpawn();
+            trashGate.transform.rotation = Quaternion.Euler(0,0,52f);
+            AudioManager.Instance.PlayClip(gateClip);
+        }
+    }
+    
+    public void CheckIfPuzzleCompletedType2()
+    {
+        bool isCompleted = true;
+        
+        foreach (Light light in lightsList)
+        {
+            if (light.currentID != type2DesiredID) isCompleted = false;
         }
 
         if (isCompleted)

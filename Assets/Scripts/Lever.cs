@@ -12,6 +12,8 @@ public class Lever : MonoBehaviour
     private bool canSwitch = true;
 
     [SerializeField] private AudioClip interactClip;
+
+    public bool isType2;
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
@@ -22,14 +24,28 @@ public class Lever : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && isTouching && canSwitch)
         {
             if (LightsPuzzleManager.Instance.isPuzzleCompleted) return;
-            
-            foreach (Light light in associatedLightsList)
+
+            if (!isType2)
             {
-                light.SwitchState();
+                foreach (Light light in associatedLightsList)
+                {
+                    light.SwitchState();
+                }
+
+                StartCoroutine(FlipSwitchCoroutine());
+                LightsPuzzleManager.Instance.CheckIfPuzzleCompleted();
             }
 
-            StartCoroutine(FlipSwitchCoroutine());
-            LightsPuzzleManager.Instance.CheckIfPuzzleCompleted();
+            else
+            {
+                foreach (Light light in associatedLightsList)
+                {
+                    light.SwitchStateType2();
+                }
+                StartCoroutine(FlipSwitchCoroutine());
+                LightsPuzzleManager.Instance.CheckIfPuzzleCompletedType2();
+            }
+          
         }
     }
 

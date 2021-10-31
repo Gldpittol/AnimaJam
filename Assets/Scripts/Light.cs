@@ -10,6 +10,12 @@ public class Light : MonoBehaviour
     [SerializeField] private bool defaultOn = false;
 
     public bool IsOn => isOn;
+
+    public Sprite[] sprites;
+    public bool isType2;
+    public int initialID;
+
+    public int currentID;
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -17,8 +23,15 @@ public class Light : MonoBehaviour
 
     private void Start()
     {
-        SwitchState();
-        if(defaultOn) SwitchState();
+        if (!isType2)
+        {
+            SwitchState();
+            if(defaultOn) SwitchState();
+        }
+        else
+        {
+            SwitchStateType2(initialID);
+        }
     }
 
     public void SwitchState()
@@ -33,5 +46,18 @@ public class Light : MonoBehaviour
         {
             sr.color = Color.white;
         }
+    }
+    
+    public void SwitchStateType2(int spriteID)
+    {
+        sr.sprite = sprites[spriteID];
+        currentID = spriteID;
+    }
+    
+    public void SwitchStateType2()
+    {
+        currentID++;
+        if (currentID == 3) currentID = 0;
+        sr.sprite = sprites[currentID];
     }
 }
