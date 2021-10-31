@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     {
         Instance = this;
         Instantiate(TransitionOut, Vector2.zero, Quaternion.identity);
-        if(string.IsNullOrEmpty(levelName)) PlayerPrefs.SetString("LastLevel", levelName);
+        if(!string.IsNullOrEmpty(levelName)) PlayerPrefs.SetString("LastLevel", levelName);
     }
 
     private void Start()

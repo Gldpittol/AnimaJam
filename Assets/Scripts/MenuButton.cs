@@ -18,7 +18,7 @@ public class MenuButton : MonoBehaviour
     {
         if (isLoadButton)
         {
-            if (PlayerPrefs.HasKey("LastLevel"))
+            if (!PlayerPrefs.HasKey("LastLevel"))
             {
                 GetComponent<Button>().interactable = false;
                 myImage.color = new Color(1, 1, 1, 0.5f);
@@ -29,6 +29,7 @@ public class MenuButton : MonoBehaviour
     public void StartGame()
     {
         if (!canInteract) return;
+        if (GameController.Instance.gameState == GameState.Cutscene) return;
         canInteract = false;
         StartCoroutine(InteractCoroutine());
         GameController.Instance.SwapLevel(firstLevelName);
@@ -37,6 +38,7 @@ public class MenuButton : MonoBehaviour
     public void LoadGame()
     {
         if (!canInteract) return;
+        if (GameController.Instance.gameState == GameState.Cutscene) return;
         canInteract = false;
         StartCoroutine(InteractCoroutine());
         GameController.Instance.SwapLevel(PlayerPrefs.GetString("LastLevel"));
