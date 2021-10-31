@@ -9,7 +9,8 @@ public class LightsPuzzleManager : MonoBehaviour
     
     [SerializeField] private List<Light> lightsList = new List<Light>();
     [SerializeField] private GameObject minimapIcon;
-    
+    [SerializeField] private GameObject trashGate;
+
     public bool isPuzzleCompleted = false;
     
     private void Awake()
@@ -31,6 +32,7 @@ public class LightsPuzzleManager : MonoBehaviour
             isPuzzleCompleted = true;
             minimapIcon.SetActive(false);
             TrashPuzzle.Instance.EndTrashSpawn();
+            trashGate.SetActive(false);
         }
     }
 }

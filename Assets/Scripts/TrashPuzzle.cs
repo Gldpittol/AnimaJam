@@ -13,6 +13,7 @@ public class TrashPuzzle : MonoBehaviour
     [SerializeField] private float minPosX, maxPosX;
     [SerializeField] private float posY;
     [SerializeField] private List<GameObject> trashPrefabs = new List<GameObject>();
+    [SerializeField] private GameObject trashBlockade;
 
     private void Awake()
     {
@@ -33,6 +34,11 @@ public class TrashPuzzle : MonoBehaviour
     public void EndTrashSpawn()
     {
         StopAllCoroutines();
+    }
+
+    public void DumpTrash()
+    {
+        trashBlockade.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 
     public IEnumerator SpawnTrashCoroutine()

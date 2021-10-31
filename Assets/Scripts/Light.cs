@@ -6,7 +6,8 @@ using UnityEngine;
 public class Light : MonoBehaviour
 {
     private SpriteRenderer sr;
-    [SerializeField] private bool isOn = true;
+    private bool isOn = true;
+    [SerializeField] private bool defaultOn = false;
 
     public bool IsOn => isOn;
     private void Awake()
@@ -17,6 +18,7 @@ public class Light : MonoBehaviour
     private void Start()
     {
         SwitchState();
+        if(defaultOn) SwitchState();
     }
 
     public void SwitchState()
@@ -25,11 +27,11 @@ public class Light : MonoBehaviour
         
         if (!isOn)
         {
-            sr.color = Color.black;
+            sr.color = Color.gray;
         }
         else
         {
-            sr.color = Color.red;
+            sr.color = Color.white;
         }
     }
 }

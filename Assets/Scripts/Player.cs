@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (GameController.Instance.gameState != GameState.Gameplay) return;
+        
         if (Input.GetKeyDown(jumpKey))
         {
             CheckJump();
@@ -37,6 +39,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameController.Instance.gameState != GameState.Gameplay) return;
+
         Move();
     }
 
@@ -56,7 +60,10 @@ public class Player : MonoBehaviour
     public void Move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-
+        
+        if (horizontal == -1) transform.localScale = new Vector3(-1, 1, 1);
+        else if (horizontal == 1) transform.localScale = new Vector3(1, 1, 1);
+        
         rb.velocity = new Vector2(speed * horizontal, rb.velocity.y);
     }
 
@@ -70,6 +77,7 @@ public class Player : MonoBehaviour
 
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
+        PlayerAnimation.Instance.InitiateJump(true);
     }
 
     public void ResetGrounding()
@@ -80,6 +88,7 @@ public class Player : MonoBehaviour
 
     public void DisableGrounding()
     {
+        PlayerAnimation.Instance.InitiateJump(false);
         isGrounded = false;
     }
 }
