@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 1
+  TransitionOut: {fileID: 6292523883957518067, guid: f5f8782929467fc4380dd2468c9544b0, type: 3}
+  TransitionIn: {fileID: 4352216861124912833, guid: 86fa05304240d924db5c5c7a408b23db, type: 3}

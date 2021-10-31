@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LightsPuzzleManager : MonoBehaviour
@@ -32,7 +33,7 @@ public class LightsPuzzleManager : MonoBehaviour
             isPuzzleCompleted = true;
             minimapIcon.SetActive(false);
             TrashPuzzle.Instance.EndTrashSpawn();
-            trashGate.SetActive(false);
+            trashGate.transform.rotation = Quaternion.Euler(0,0,52f);
         }
     }
 }

@@ -25,6 +25,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
+        if(GameController.Instance.gameState == GameState.Gameplay)
         ChangeState();
     }
 
@@ -77,5 +78,10 @@ public class PlayerAnimation : MonoBehaviour
             animationState = AnimationState.Jump;
             animator.Play("PlayerFall");
         }
+    }
+
+    public void DeathAnimation()
+    {
+        animator.Play("PlayerDeath");
     }
 }

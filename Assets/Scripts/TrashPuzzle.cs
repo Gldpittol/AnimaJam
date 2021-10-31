@@ -39,6 +39,7 @@ public class TrashPuzzle : MonoBehaviour
     public void DumpTrash()
     {
         trashBlockade.GetComponent<Rigidbody2D>().gravityScale = 1;
+        trashBlockade.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }
 
     public IEnumerator SpawnTrashCoroutine()

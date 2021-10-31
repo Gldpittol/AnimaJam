@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (GameController.Instance.gameState != GameState.Gameplay) return;
+
         if (other.CompareTag("Deadly"))
         {
             Die();
@@ -54,6 +56,18 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        GameController.Instance.gameState = GameState.Cutscene;
+        rb.velocity = Vector2.zero;
+        StopAllCoroutines();
+        StartCoroutine(DieCoroutine());
+    }
+
+    public IEnumerator DieCoroutine()
+    {
+        GetComponent<PlayerAnimation>().DeathAnimation();
+        yield return new WaitForSeconds(1f);
+        GameObject temp = Instantiate(GameController.Instance.TransitionIn, Vector3.zero, Quaternion.identity);
+        yield return new WaitForSeconds(temp.GetComponent<Transition>().transitionDuration + 0.2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
