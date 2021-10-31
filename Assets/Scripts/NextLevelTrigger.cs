@@ -13,20 +13,9 @@ public class NextLevelTrigger : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            SwapLevel();
+            GameController.Instance.SwapLevel(nextLevelName);
         }
     }
     
-    public void SwapLevel()
-    {
-        StartCoroutine(SwapLevelCoroutine());
-    }
-
-    public IEnumerator SwapLevelCoroutine()
-    {
-        yield return new WaitForSeconds(0.2f);
-        GameObject temp = Instantiate(GameController.Instance.TransitionIn, Vector3.zero, Quaternion.identity);
-        yield return new WaitForSeconds(temp.GetComponent<Transition>().transitionDuration + 0.2f);
-        GameController.Instance.GoToNextLevel(nextLevelName);
-    }
+   
 }

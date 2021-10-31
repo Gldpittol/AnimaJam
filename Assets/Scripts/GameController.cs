@@ -48,6 +48,19 @@ public class GameController : MonoBehaviour
     {
         StartCoroutine(ShakeCameraCoroutine(duration));
     }
+    
+    public void SwapLevel(string nextLevelName)
+    {
+        StartCoroutine(SwapLevelCoroutine(nextLevelName));
+    }
+
+    public IEnumerator SwapLevelCoroutine(string nextLevelName)
+    {
+        yield return new WaitForSeconds(0.2f);
+        GameObject temp = Instantiate(GameController.Instance.TransitionIn, Vector3.zero, Quaternion.identity);
+        yield return new WaitForSeconds(temp.GetComponent<Transition>().transitionDuration + 0.2f);
+        GameController.Instance.GoToNextLevel(nextLevelName);
+    }
 
     public IEnumerator ShakeCameraCoroutine(float duration)
     {
