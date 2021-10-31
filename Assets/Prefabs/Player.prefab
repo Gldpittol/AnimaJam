@@ -197,6 +197,8 @@ MonoBehaviour:
   speed: 8
   jumpForce: {x: 0, y: 15}
   jumpKey: 32
+  jumpClip: {fileID: 8300000, guid: 501452f89c37aa042b5761bde8565112, type: 3}
+  gameOverClip: {fileID: 8300000, guid: 7d1bbcf13eeb46c4fb7cf148788991ce, type: 3}
 --- !u!50 &4090087661061657739
 Rigidbody2D:
   serializedVersion: 4

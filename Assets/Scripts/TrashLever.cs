@@ -7,6 +7,7 @@ public class TrashLever : MonoBehaviour
     private bool isTouching = false;
     private Animator myAnimator;
     private bool canSwitch = true;
+    [SerializeField] private AudioClip interactClip;
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
@@ -34,6 +35,7 @@ public class TrashLever : MonoBehaviour
     public IEnumerator FlipSwitchCoroutine()
     {
         canSwitch = false;
+        AudioManager.Instance.PlayClip(interactClip);
         myAnimator.Play("LeverAnimation");
         yield return new WaitForSeconds(1f);
         canSwitch = true;

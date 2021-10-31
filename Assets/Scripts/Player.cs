@@ -16,7 +16,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool canDoubleJump = true;
     private bool isGrounded = true;
-    
+
+    public AudioClip jumpClip;
+    public AudioClip gameOverClip;
+
     public bool IsGrounded => isGrounded;
     private void Awake()
     {
@@ -64,6 +67,8 @@ public class Player : MonoBehaviour
 
     public IEnumerator DieCoroutine()
     {
+        AudioManager.Instance.PlayClip(gameOverClip);
+
         GetComponent<PlayerAnimation>().DeathAnimation();
         yield return new WaitForSeconds(1f);
         GameObject temp = Instantiate(GameController.Instance.TransitionIn, Vector3.zero, Quaternion.identity);
@@ -92,6 +97,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
         PlayerAnimation.Instance.InitiateJump(true);
+        AudioManager.Instance.PlayClip(jumpClip);
     }
 
     public void ResetGrounding()

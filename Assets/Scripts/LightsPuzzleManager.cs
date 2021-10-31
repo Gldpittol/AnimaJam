@@ -11,6 +11,7 @@ public class LightsPuzzleManager : MonoBehaviour
     [SerializeField] private List<Light> lightsList = new List<Light>();
     [SerializeField] private GameObject minimapIcon;
     [SerializeField] private GameObject trashGate;
+    [SerializeField] private AudioClip gateClip;
 
     public bool isPuzzleCompleted = false;
     
@@ -34,6 +35,7 @@ public class LightsPuzzleManager : MonoBehaviour
             minimapIcon.SetActive(false);
             TrashPuzzle.Instance.EndTrashSpawn();
             trashGate.transform.rotation = Quaternion.Euler(0,0,52f);
+            AudioManager.Instance.PlayClip(gateClip);
         }
     }
 }

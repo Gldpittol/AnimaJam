@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
 
     public void GoToNextLevel(string sceneName)
     {
+        Destroy(AudioManager.Instance);
+        AudioManager.Instance = null;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }
