@@ -30,4 +30,17 @@ public class GameController : MonoBehaviour
         AudioManager.Instance = null;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
+
+    public void ShakeCamera(float duration)
+    {
+        StartCoroutine(ShakeCameraCoroutine(duration));
+    }
+
+    public IEnumerator ShakeCameraCoroutine(float duration)
+    {
+        Camera.main.GetComponentInParent<Animator>().enabled = true;
+        yield return new WaitForSeconds(duration);
+        Camera.main.GetComponentInParent<Animator>().enabled = false;
+    }
+    
 }

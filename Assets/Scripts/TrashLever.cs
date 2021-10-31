@@ -8,6 +8,8 @@ public class TrashLever : MonoBehaviour
     private Animator myAnimator;
     private bool canSwitch = true;
     [SerializeField] private AudioClip interactClip;
+
+    private bool isUsed = false;
     private void Awake()
     {
         myAnimator = GetComponent<Animator>();
@@ -15,8 +17,11 @@ public class TrashLever : MonoBehaviour
 
     private void Update()
     {
+        if (isUsed) return;
+        
         if (Input.GetKeyDown(KeyCode.F) && isTouching && canSwitch)
         {
+            isUsed = true;
             StartCoroutine(FlipSwitchCoroutine());
             TrashPuzzle.Instance.DumpTrash();
         }

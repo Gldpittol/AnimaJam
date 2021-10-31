@@ -12,10 +12,12 @@ public class TrashPuzzle : MonoBehaviour
     [SerializeField] private float delayBetweenTrashSpawns;
     [SerializeField] private float minPosX, maxPosX;
     [SerializeField] private float posY;
+    [SerializeField] private float shakeDuration;
     [SerializeField] private List<GameObject> trashPrefabs = new List<GameObject>();
     [SerializeField] private GameObject trashBlockade;
     [SerializeField] private GameObject puzzleTrashIcon;
     [SerializeField] private GameObject trashVFX;
+    [SerializeField] private AudioClip trashFallClip;
 
     private void Awake()
     {
@@ -45,9 +47,11 @@ public class TrashPuzzle : MonoBehaviour
         trashBlockade.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         puzzleTrashIcon.SetActive(false);
         trashVFX.SetActive(true);
+        AudioManager.Instance.PlayClip(trashFallClip);
+        GameController.Instance.ShakeCamera(shakeDuration);
         Destroy(trashBlockade, 3f);
     }
-
+    
     public IEnumerator SpawnTrashCoroutine()
     {
         SpawnTrash();
