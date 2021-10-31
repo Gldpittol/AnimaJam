@@ -415,7 +415,6 @@ GameObject:
   - component: {fileID: 178034693}
   - component: {fileID: 178034695}
   - component: {fileID: 178034694}
-  - component: {fileID: 178034696}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -430,7 +429,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178034692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -477,26 +476,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178034692}
   m_CullTransparentMesh: 1
---- !u!114 &178034696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178034692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 505cbd2c61145af499cb3f60a2e8ed21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleX: 1.5
-  scaleY: 1.5
-  border: {fileID: 2133946201}
-  borderExtraScaleX: 30
-  borderExtraScaleY: 30
-  bgExtraScaleX: 10
-  bgExtraScaleY: 10
-  bgImage: {fileID: 622138751}
 --- !u!1 &180805543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.53226, y: -3.4362934, z: 35.98501}
+  m_LocalPosition: {x: 5.3765874, y: -2.9851794, z: 35.98501}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2133736818}
@@ -1829,8 +1808,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -10}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -10.309998, y: -15}
+  m_SizeDelta: {x: 142.67, y: 135}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &622138753
 MonoBehaviour:
@@ -3936,6 +3915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  moveBoth: 0
 --- !u!1 &1251550114
 GameObject:
   m_ObjectHideFlags: 3
@@ -5660,7 +5640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913523541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.663522, y: -4.06159, z: 10}
+  m_LocalPosition: {x: -16.296257, y: -2.0000014, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -5733,7 +5713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -6298,7 +6278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133736817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.663522, y: -2.0615895, z: 0}
+  m_LocalPosition: {x: -16.296257, y: -0.0000009536743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1251550115}
@@ -6500,8 +6480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 165}
+  m_AnchoredPosition: {x: -2.75, y: 0}
+  m_SizeDelta: {x: 157.25, y: 162.25}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2133946203
 MonoBehaviour:
@@ -13406,11 +13386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4090087661061657734, guid: 806e0a52a4baa1c4da241656a3c2cadf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.97
+      value: -16.21
       objectReference: {fileID: 0}
     - target: {fileID: 4090087661061657734, guid: 806e0a52a4baa1c4da241656a3c2cadf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.35
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 4090087661061657734, guid: 806e0a52a4baa1c4da241656a3c2cadf, type: 3}
       propertyPath: m_LocalPosition.z
