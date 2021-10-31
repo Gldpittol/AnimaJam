@@ -8,7 +8,7 @@ public class SenoidalMovement : MonoBehaviour
     public float Speed;
 
     private float currentTime;
-    void LateUpdate()
+    void Update()
     {
         currentTime += Time.deltaTime;
         transform.position = transform.position + new Vector3(0.0f, Mathf.Sin(currentTime * Speed), 0.0f) * Intensity;

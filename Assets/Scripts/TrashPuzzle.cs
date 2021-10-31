@@ -14,10 +14,13 @@ public class TrashPuzzle : MonoBehaviour
     [SerializeField] private float posY;
     [SerializeField] private List<GameObject> trashPrefabs = new List<GameObject>();
     [SerializeField] private GameObject trashBlockade;
+    [SerializeField] private GameObject puzzleTrashIcon;
+    [SerializeField] private GameObject trashVFX;
 
     private void Awake()
     {
-        Instance = this;
+        Instance = this;     
+        trashVFX.SetActive(false);
         StartCoroutine(SpawnTrashCoroutine());
     }
 
@@ -40,6 +43,8 @@ public class TrashPuzzle : MonoBehaviour
     {
         trashBlockade.GetComponent<Rigidbody2D>().gravityScale = 1;
         trashBlockade.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        puzzleTrashIcon.SetActive(false);
+        trashVFX.SetActive(true);
         Destroy(trashBlockade, 3f);
     }
 
