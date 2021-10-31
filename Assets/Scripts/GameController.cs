@@ -18,16 +18,29 @@ public class GameController : MonoBehaviour
     public GameState gameState = GameState.Gameplay;
     public GameObject TransitionOut;
     public GameObject TransitionIn;
+    public string levelName;
+    public AudioClip sceneMusic;
+
+    public static string LastScene = "";
+    
     private void Awake()
     {
         Instance = this;
         Instantiate(TransitionOut, Vector2.zero, Quaternion.identity);
+        if(string.IsNullOrEmpty(levelName)) PlayerPrefs.SetString("LastLevel", levelName);
+    }
+
+    private void Start()
+    {
+        if (LastScene != SceneManager.GetActiveScene().name)
+        {
+            if(sceneMusic != null) AudioManager.Instance.PlayMusic(sceneMusic);
+            LastScene = SceneManager.GetActiveScene().name;
+        }
     }
 
     public void GoToNextLevel(string sceneName)
     {
-        Destroy(AudioManager.Instance);
-        AudioManager.Instance = null;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 

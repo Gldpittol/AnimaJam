@@ -9,9 +9,24 @@ public class NextLevelTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (GameController.Instance.gameState != GameState.Gameplay) return;
+        
         if (other.CompareTag("Player"))
         {
-            GameController.Instance.GoToNextLevel(nextLevelName);
+            SwapLevel();
         }
+    }
+    
+    public void SwapLevel()
+    {
+        StartCoroutine(SwapLevelCoroutine());
+    }
+
+    public IEnumerator SwapLevelCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        GameObject temp = Instantiate(GameController.Instance.TransitionIn, Vector3.zero, Quaternion.identity);
+        yield return new WaitForSeconds(temp.GetComponent<Transition>().transitionDuration + 0.2f);
+        GameController.Instance.GoToNextLevel(nextLevelName);
     }
 }

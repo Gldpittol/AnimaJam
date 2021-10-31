@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     private AudioSource audSource;
+    [SerializeField] private AudioSource musicSource;
     private void Awake()
     {
         if (!Instance)
@@ -25,4 +26,11 @@ public class AudioManager : MonoBehaviour
     {
         audSource.PlayOneShot(audClip);
     }
+
+    public void PlayMusic(AudioClip musicClip)
+    {
+        musicSource.PlayOneShot(musicClip);
+        musicSource.loop = true;
+    }
+    
 }
