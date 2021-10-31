@@ -55,7 +55,7 @@ public class LightsPuzzleManager : MonoBehaviour
             isPuzzleCompleted = true;
             minimapIcon.SetActive(false);
             TrashPuzzle.Instance.EndTrashSpawn();
-            trashGate.transform.rotation = Quaternion.Euler(0,0,52f);
+            trashGate.transform.rotation = Quaternion.Euler(0,0,25f);
             AudioManager.Instance.PlayClip(gateClip);
         }
     }
