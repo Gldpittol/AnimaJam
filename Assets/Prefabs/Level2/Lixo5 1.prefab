@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5147961721403133178}
   - component: {fileID: 9210719936987696152}
   - component: {fileID: 7275860643817828192}
-  - component: {fileID: 325641342955075955}
+  - component: {fileID: 675046891521629034}
   m_Layer: 0
-  m_Name: Lixo5
+  m_Name: Lixo5 1
   m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 4485255102253211176, guid: efd4d560b3973ac45af63a3a529f6d3c, type: 3}
+  m_Sprite: {fileID: -1433350579284180104, guid: da9308c5142e0524b99fdb8f88f43e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &325641342955075955
+--- !u!61 &675046891521629034
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,12 +122,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.3, y: 1.91}
+    oldSize: {x: 1.53, y: 1.685}
     newSize: {x: 2.52, y: 2.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3, y: 1.91}
+  m_Size: {x: 1.53, y: 1.685}
   m_EdgeRadius: 0

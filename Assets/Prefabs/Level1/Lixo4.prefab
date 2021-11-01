@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1605436087631812119}
   - component: {fileID: 3379266042632820469}
-  - component: {fileID: 3312345699722685524}
   - component: {fileID: -7114474211189080590}
+  - component: {fileID: 5288546084702897975}
   m_Layer: 0
   m_Name: Lixo4
   m_TagString: Deadly
@@ -84,98 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3312345699722685524
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6539187550546939702}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.88, y: 4.17}
-    newSize: {x: 2.52, y: 2.35}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.41, y: -1.91}
-      - {x: -0.35999998, y: -1.74}
-      - {x: -0.32999998, y: -1.64}
-      - {x: -0.28, y: -1.4699999}
-      - {x: -0.24, y: -1.3299999}
-      - {x: -0.21, y: -1.23}
-      - {x: -0.16, y: -1.06}
-      - {x: -0.14, y: -0.98999995}
-      - {x: -0.11, y: -0.89}
-      - {x: -0.089999996, y: -0.82}
-      - {x: -0.06, y: -0.71999997}
-      - {x: 0.089999996, y: -0.21}
-      - {x: 0.12, y: -0.099999994}
-      - {x: 0.14, y: -0.04}
-      - {x: 0.17, y: 0.06}
-      - {x: 0.19999999, y: 0.17}
-      - {x: 0.32, y: 0.57}
-      - {x: 0.37, y: 0.75}
-      - {x: 0.39, y: 0.82}
-      - {x: 0.42999998, y: 0.95}
-      - {x: 0.45999998, y: 1.05}
-      - {x: 0.52, y: 1.26}
-      - {x: 0.59, y: 1.49}
-      - {x: 0.69, y: 1.8299999}
-      - {x: 0.71, y: 1.9}
-      - {x: 0.71, y: 1.9799999}
-      - {x: 0.7, y: 2.01}
-      - {x: 0.65, y: 2.06}
-      - {x: 0.48, y: 2.06}
-      - {x: 0.42999998, y: 2.02}
-      - {x: 0.41, y: 2}
-      - {x: 0.39, y: 1.9499999}
-      - {x: 0.31, y: 1.7099999}
-      - {x: 0.28, y: 1.6999999}
-      - {x: 0.28, y: 1.63}
-      - {x: 0.24, y: 1.4699999}
-      - {x: 0.14, y: 1.15}
-      - {x: 0.08, y: 0.95}
-      - {x: 0.03, y: 0.78999996}
-      - {x: -0.03, y: 0.59}
-      - {x: -0.07, y: 0.45999998}
-      - {x: -0.19, y: 0.06}
-      - {x: -0.22999999, y: -0.07}
-      - {x: -0.32999998, y: -0.41}
-      - {x: -0.42, y: -0.71999997}
-      - {x: -0.48, y: -0.93}
-      - {x: -0.52, y: -1.0799999}
-      - {x: -0.55, y: -1.18}
-      - {x: -0.58, y: -1.29}
-      - {x: -0.62, y: -1.4499999}
-      - {x: -0.65, y: -1.56}
-      - {x: -0.69, y: -1.73}
-      - {x: -0.7, y: -1.78}
-      - {x: -0.71, y: -1.8199999}
-      - {x: -0.71, y: -2.01}
-      - {x: -0.65999997, y: -2.06}
-      - {x: -0.47, y: -2.06}
-      - {x: -0.45, y: -2.04}
-      - {x: -0.42999998, y: -1.9799999}
-    - - {x: 0.42999998, y: -1.13}
-      - {x: 0.42, y: -1.15}
-      - {x: 0.42, y: -1.43}
-      - {x: 0.44, y: -1.4599999}
-      - {x: 0.65, y: -1.65}
-      - {x: 0.71, y: -1.65}
-      - {x: 0.71, y: -1.16}
-      - {x: 0.66999996, y: -1.13}
 --- !u!50 &-7114474211189080590
 Rigidbody2D:
   serializedVersion: 4
@@ -197,3 +105,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &5288546084702897975
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539187550546939702}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.88, y: 4.17}
+    newSize: {x: 2.52, y: 2.35}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.88, y: 4.17}
+  m_EdgeRadius: 0
