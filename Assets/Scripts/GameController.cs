@@ -34,6 +34,12 @@ public class GameController : MonoBehaviour
     {
         if (LastScene != SceneManager.GetActiveScene().name)
         {
+            if (LastScene == "Credits")
+            {
+                LastScene = "Menu";
+                return;
+            }
+            
             if(sceneMusic != null) AudioManager.Instance.PlayMusic(sceneMusic);
             LastScene = SceneManager.GetActiveScene().name;
         }
