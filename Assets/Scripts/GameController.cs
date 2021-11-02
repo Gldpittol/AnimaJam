@@ -28,6 +28,9 @@ public class GameController : MonoBehaviour
         Instance = this;
         Instantiate(TransitionOut, Vector2.zero, Quaternion.identity);
         if(!string.IsNullOrEmpty(levelName)) PlayerPrefs.SetString("LastLevel", levelName);
+        
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 1;
     }
 
     private void Start()

@@ -26,9 +26,6 @@ public class Player : MonoBehaviour
     {
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
-
-        Application.targetFrameRate = 60;
-        QualitySettings.vSyncCount = 1;
     }
 
     private void Update()
